@@ -1,0 +1,30 @@
+{
+  // Use IntelliSense to learn 
+  // about possible attributes.
+  // Hover to view descriptions 
+  // of existing attributes.
+  // For more information, visit: 
+  // https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C++ Debugging",
+      "type": "cppdbg",
+      "request": "launch",
+      // "program": "${workspaceFolder}/bazel-bin/main/basic_unit/basic_unit_test",
+      "program": "${workspaceFolder}/bazel-bin/main/register/register_test",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      // "preLaunchTask": "Bazel: Build",
+    }
+  ]
+}
