@@ -37,6 +37,17 @@ class DFlipFlop {
   bool clock_prev_ = false;
 };
 
+class JKFlipFlop {
+ public:
+  JKFlipFlop() {};
+  void Run(const bool clock, const bool J, const bool K);
+  const bool GetOutput() const;
+
+ private:
+  bool Q_ = false;
+  bool clock_prev_ = false;
+};
+
 class Clock {
  public:
   Clock(const unsigned int half_period, const unsigned int num_period);

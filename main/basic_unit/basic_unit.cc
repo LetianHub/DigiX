@@ -25,6 +25,22 @@ void DFlipFlop::Run(const bool clock, const bool D) {
 }
 const bool DFlipFlop::GetOutput() const { return Q_; }
 
+void JKFlipFlop::Run(const bool clock, const bool J, const bool K) {
+  if (clock_prev_ == false && clock == true) {
+    if (J == true && K == true) {
+      Q_ = !Q_;
+    } else if (J == true && K == false) {
+      Q_ = true;
+    } else if (J == false && K == true) {
+      Q_ = false;
+    } else if (J == false && K == false) {
+      Q_ = Q_;
+    }
+  }
+  clock_prev_ = clock;
+}
+const bool JKFlipFlop::GetOutput() const { return Q_; }
+
 Clock::Clock(const unsigned int half_period, const unsigned int num_period) {
   if (half_period > 0) {
     for (unsigned int step = 0; step < half_period; ++step) {
